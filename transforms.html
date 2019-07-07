@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Transformaciones CSS</title>
+  <style>
+    body{
+      height: 100vh;
+      display: grid;
+      grid-template-rows : repeat(2, 1fr);
+      margin: 0;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    .container1 {
+      border: 1px solid red;
+      /* transform: rotate(45deg) skew(10deg) translate(100px) scale(2); */
+    }
+
+    .container2 {
+      border: 1px solid red;
+      perspective: 200px;
+      /* perspective-origin: center; */
+      /* perspective-origin: top; */
+      /* perspective-origin: bottom; */
+      /* perspective-origin: right; */
+      /* perspective-origin: left; */
+      /* perspective-origin: top right; */
+      /* perspective-origin: top left; */
+      /* perspective-origin: bottom right; */
+      /* perspective-origin: bottom left; */
+    }
+
+    .container3 {
+      border: 1px solid red;
+      perspective: 200px;
+    }
+
+    .container4 {
+      border: 1px solid red;
+      perspective: 200px;
+    }
+
+    .container5 {
+      border: 1px solid red;
+      perspective: 200px;
+    }
+
+    .cuadrado {
+      width: 200px;
+      height: 200px;
+      background-image: url("images/imgProfile.png");
+      background-size: 200px;
+      background-repeat: no-repeat;
+      margin: 20px;
+      transition: .3s;
+    }
+
+    .container1:hover .transformacion1 {
+      /* transform: rotate(45deg); */
+      /* transform: rotate(-45deg); */
+      /* transform: rotateX(45deg); */
+      /* transform: rotate3d(1, 0, 0, 45deg); */
+      /* transform: rotateY(45deg); */
+      /* transform: rotate3d(0, 1, 0, 45deg); */
+      /* transform: rotateZ(45deg); */
+      /* transform: rotate3d(0, 0, 1, 45deg); */
+      /* transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg); */
+      /* transform: rotate3d(x, y, z, deg); */
+      transform: rotate3d(1, 1, 1, 45deg);
+    }
+
+    .container2:hover .transformacion2 {
+      /* transform: translateX(100px); */
+      /* transform: translateX(-100px); */
+      /* transform: translateY(100px); */
+      /* transform: translateY(-100px); */
+      /* transform: translate(100px, 100px); */
+      /* transform: translate(-100px, -100px); */
+      /* transform: translateZ(100px); */
+      /* transform: translate3d(X, Y, Z); */
+      transform: translate3d(-100px, -100px, -100px);
+    }
+
+    .container3:hover .transformacion3 {
+      /* 0 es igual al 0% del tamaño y 1 es igual al 100% del tamaño. */
+      /* transform: scale(X, Y); => se puede especificar el eje que se quiere escalar */
+      /* transform: scale(2); => se escala el elemento al 200% */
+      transform: scale(2, .5);
+    }
+
+    .container4:hover .transformacion4 {
+      /* transform: skew(X, Y); */
+      transform: skew(-30deg, 15deg);
+    }
+
+    .container5:hover .transformacion5 {
+      /* transform-origin: X, Y; */
+      /* transform-origin: palabraReservada; => top bottom left right */
+      /* transform-origin: palabraReservadaX palabraReservadaY; */
+      /* transform-origin: left top; */
+      transform-origin: 0% 0%;
+      transform: rotateZ(15deg);
+    }
+
+    .face {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      font-size: 100px;
+      text-align: center;
+    }
+
+    .perspective-box {
+      width: 100px;
+      height: 100px;
+      transform-style: preserve-3d;
+      transform: rotateX(-15deg) rotateY(15deg);
+      perspective: 7.5cm;
+    }
+
+    .top {
+      background-color: skyblue;
+      transform: rotateX(90deg) translate3d(0, 0, 50px);
+    }
+
+    .left {
+      background-color: pink;
+      transform: rotateY(-90deg) translate3d(0, 0, 50px);
+    }
+
+    .front {
+      background-color: limegreen;
+      transform: translate3d(0, 0, 50px);
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div class="row">
+    <div class="container1">
+      <div class="cuadrado transformacion1"></div>
+    </div>
+    <div class="container2">
+      <div class="cuadrado transformacion2"></div>
+    </div>
+    <div class="perspective-box">
+      <div class="face front">A</div>
+      <div class="face top">B</div>
+      <div class="face left">C</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container3">
+      <div class="cuadrado transformacion3"></div>
+    </div>
+    <div class="container4">
+      <div class="cuadrado transformacion4"></div>
+    </div>
+    <div class="container5">
+      <div class="cuadrado transformacion5"></div>
+    </div>
+  </div>
+</body>
+</html>
