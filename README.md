@@ -1,6 +1,6 @@
 # Práctica realizando animaciones
 
+<img src="/gif/PrácticaAnimaciones.gif" alt="gif practica"/>
 ![](/gif/Animations.gif)
-<img src="/gif/PrácticaAnimaciones.gif" alt="print app"/>
-<img src="/images/Screenshot2.png" alt="print app"/>
-<img src="/images/Screenshot3.png" alt="print app"/>
+![](/gif/Transformaciones.gif)
+![](/gif/Transiciones.gif)
